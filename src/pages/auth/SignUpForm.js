@@ -57,14 +57,11 @@ const SignUpForm = () => {
               <Form.Control
                 className={styles.Input}
                 type="text"
-                placeholder="username"
+                placeholder="Username"
                 name="username"
                 value={username}
                 onChange={handleChange}
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
             </Form.Group>
             {errors.username?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
@@ -77,14 +74,14 @@ const SignUpForm = () => {
               <Form.Control
                 className={styles.Input}
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 name="password1"
                 value={password1}
                 onChange={handleChange}
               />
             </Form.Group>
             {errors.password1?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
+              <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
@@ -101,7 +98,7 @@ const SignUpForm = () => {
               />
             </Form.Group>
             {errors.password2?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
+              <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
@@ -119,6 +116,7 @@ const SignUpForm = () => {
             ))}
           </Form>
         </Container>
+
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
             Already have an account? <span>Sign in</span>
